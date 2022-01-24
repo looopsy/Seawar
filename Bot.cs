@@ -97,7 +97,7 @@ namespace SeaWars
             int posX = r.Next(1, Form1.mapSize);
             int posY = r.Next(1, Form1.mapSize);
 
-            while (enemyButtons[posX, posY].BackColor == Color.Blue || enemyButtons[posX, posY].BackColor == Color.White)
+            while (enemyButtons[posX, posY].BackColor == Color.Blue || enemyButtons[posX, posY].BackColor == Color.Black)
             {
                 posX = r.Next(1, Form1.mapSize);
                 posY = r.Next(1, Form1.mapSize);
@@ -107,14 +107,12 @@ namespace SeaWars
             {
                 hit = true;
                 enemyMap[posX, posY] = 0;
-                enemyButtons[posX, posY].BackColor = Color.OrangeRed;
+                enemyButtons[posX, posY].BackColor = Color.Blue;
                 enemyButtons[posX, posY].Text = "X";
             }else
             {
                 hit = false;
-                enemyButtons[posX, posY].BackColor = Color.White;
-                enemyButtons[posX, posY].Text = "•";
-                
+                enemyButtons[posX, posY].BackColor = Color.Black;
             }
             if (hit)
                 Shoot();

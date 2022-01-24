@@ -105,7 +105,7 @@ namespace SeaWars
 
             Label map2 = new Label();
             map2.Text = "Карта противника";
-            map2.Location = new Point(300 + mapSize * cellSize / 2, mapSize * cellSize + 10);
+            map2.Location = new Point(350 + mapSize * cellSize / 2, mapSize * cellSize + 10);
             this.Controls.Add(map2);
 
             Button startButton = new Button();
@@ -147,7 +147,7 @@ namespace SeaWars
             {
                 if (myMap[pressedButton.Location.Y / cellSize, pressedButton.Location.X / cellSize] == 0)
                 {
-                    pressedButton.BackColor = Color.DarkBlue;
+                    pressedButton.BackColor = Color.Red;
                     myMap[pressedButton.Location.Y / cellSize, pressedButton.Location.X / cellSize] = 1;
                 }
                 else
@@ -185,24 +185,17 @@ namespace SeaWars
                 {
                     hit = true;
                     map[pressedButton.Location.Y / cellSize, (pressedButton.Location.X - delta) / cellSize] = 0;
-                    pressedButton.BackColor = Color.OrangeRed;
+                    pressedButton.BackColor = Color.Blue;
                     pressedButton.Text = "X";
-                    
                 }
                 else
                 {
                     hit = false;
 
-                    pressedButton.Text = "•";
-                    pressedButton.BackColor = Color.White;
+                    pressedButton.BackColor = Color.Black;
                 }
             }
             return hit;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
